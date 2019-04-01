@@ -7,9 +7,10 @@ def hough(points, weights = None, discretizationRadius = 1000, discretizationAng
     
         Arguments:
             points {Array n * 2} -- Datapoints to represent in Hough Space 
+            weights {Array n} -- Weights to associate to each points
+                (default {None} - Equal weights)
             discretizationRadius {Int} -- Discretization radius Axis
             discretizationAngle {Int} -- Discretization Angle Axis
-        
     """
     if weights is None:
         weights = np.ones(len(points))
@@ -34,13 +35,10 @@ def hough(points, weights = None, discretizationRadius = 1000, discretizationAng
 def displayHough(points, weights = None):
     """
         Computes hough transforms of the points and displays it
-        Call this multiple times to display different serieses in different colors
     
         Arguments:
-            projection {Projection} -- Object obtained from CAA
             points -- Datapoints to project and anlyze
-            plt -- Plot to display points. 
-            color -- Color name for plotting 'points' 
+            weights {Array n} -- Weights to associate to each points
     """
     houghSpace, xaxis, yaxis = hough(points, weights)
 
