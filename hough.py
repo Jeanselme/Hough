@@ -19,7 +19,7 @@ def hough(points, weights = None, discretizationRadius = 1000, discretizationAng
     # Hough space
     houghSpace = np.zeros((discretizationRadius, discretizationAngle))
     radiusBins = np.linspace(- np.max(r), np.max(r), discretizationRadius + 1)
-    angleBins = np.linspace(0, np.pi, discretizationAngle)
+    angleBins = np.linspace(-np.pi, np.pi, discretizationAngle)
     for i, phi in enumerate(angleBins):
         # For the given theta compute the radius of the line cutting the points
         radPhi = np.cos(phi - theta) * r
