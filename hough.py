@@ -11,10 +11,7 @@ def hough(points, weights = None, discretizationRadius = 1000, discretizationAng
                 (default {None} - Equal weights)
             discretizationRadius {Int} -- Discretization radius Axis
             discretizationAngle {Int} -- Discretization Angle Axis
-    """
-    if weights is None:
-        weights = np.ones(len(points))
-    
+    """   
     # Polar coordinate of all points
     r = np.sqrt(points[:,0]**2 + points[:,1]**2)
     theta = np.arctan2(points[:,1], points[:,0])
